@@ -253,7 +253,7 @@ class DownloadThread(threading.Thread):
 
 
 class Spider:
-    thread_num = 1
+    thread_num = 4
 
     def __init__(self):
         self.url_queue = Queue.Queue()
@@ -272,7 +272,7 @@ class Spider:
         socket.setdefaulttimeout(6)
         root_my_url = DownloadUrl(root_url, root_host, None)
         self.url_queue.put(root_my_url)
-
+ 
         # if has thread running or url_queue is not empty
         while True:
             try:
